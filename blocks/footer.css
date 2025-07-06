@@ -1,0 +1,23 @@
+.footer {
+  margin-top: 80px;
+  padding: 20px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: Poppins;
+  color: rgba(33, 33, 33, 0.7);
+  min-width: 104px;
+  min-height: 16px;
+  letter-spacing: 0;
+  line-height: 100%;
+}
+
+.divider {
+  height: 2px;
+  background-color: rgba(33, 33, 33, 0.4);
+  margin: 20px auto 10px auto;
+  width: 100%;
+}

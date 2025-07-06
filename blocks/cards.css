@@ -1,0 +1,33 @@
+.cards {
+  padding-top: 20px;
+}
+
+.cards__lists {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  gap: 40px 20px;
+}
+
+/* Desktop View: 3 cards per row */
+@media screen and (min-width: 1320px) {
+  .cards__lists {
+    grid-template-columns: repeat(3, 413px);
+  }
+}
+
+/* Tablet View: 2 cards per row */
+@media screen and (min-width: 630px) and (max-width: 1319px) {
+  .cards__lists {
+    grid-template-columns: repeat(2, 413px);
+  }
+}
+
+/* Mobile View: 1 card per row */
+@media screen and (max-width: 629px) {
+  .cards__lists {
+    grid-template-columns: 1fr;
+  }
+}
