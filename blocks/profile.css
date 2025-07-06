@@ -1,7 +1,6 @@
 .profile {
   display: flex;
   padding: 34px 0 20px;
-  border-bottom: rgba(33, 33, 33, 0.4) solid;
 }
 
 .profile__name {
@@ -33,10 +32,6 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   max-width: 420px;
-}
-
-.profile__column {
-  margin: 0 0 20px;
 }
 
 .profile__description {
@@ -81,7 +76,6 @@
 .profile__column {
   display: flex;
   flex-direction: column;
-  margin: 0 0 20px;
 }
 
 .profile__edit-btn {
@@ -96,19 +90,8 @@
   opacity: 70%;
 }
 
-@media screen and (max-width: 627px) {
-  .profile {
-    flex-direction: column;
-    max-width: 288px;
-    align-items: center;
-    text-align: center;
-    padding-top: 20px;
-    max-width: 288px;
-  }
-
-  .profile__avatar {
-    margin: 0 0 12px;
-    height: 80px;
-    width: 80px;
-  }
+.profile__avatar {
+  margin: 0 0 12px;
+  height: 80px;
+  width: 80px;
 }

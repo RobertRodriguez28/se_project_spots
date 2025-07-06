@@ -20,7 +20,14 @@
 .card__content {
   display: flex;
   justify-content: space-between;
-  /* margin: 0; Can back to change margin */
+  margin-top: 10px;
+  color: rgba(33, 33, 33, 1);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 20px;
+  letter-spacing: 0%;
+  line-height: 120%;
 }
 .card__container {
   display: flex;
@@ -39,11 +46,9 @@
 
 @media (max-width: 320px) {
   .card__image {
-    max-width: 288px;
+    max-width: 320px;
   }
 }
 
 /* TODO:
-3. Add the space betweent the image and the card content
-4. Fix the spacing in the footer
-*/
+/* fix mobile view center new post button and get rid of scroll bar */

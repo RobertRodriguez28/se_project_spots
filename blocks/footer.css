@@ -1,6 +1,6 @@
 .footer {
-  margin-top: 80px;
-  padding: 20px;
+  padding-bottom: 60px;
+  padding-top: 60px;
 }
 
 .footer__content {
@@ -15,9 +15,6 @@
   line-height: 100%;
 }
 
-.divider {
-  height: 2px;
-  background-color: rgba(33, 33, 33, 0.4);
-  margin: 20px auto 10px auto;
-  width: 100%;
+.footer__content_text {
+  margin: 0;
 }
