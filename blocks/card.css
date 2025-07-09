@@ -15,6 +15,10 @@
 
 .card__title {
   margin: 0;
+  font-family: Poppins, sans-serif;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
 }
 
 .card__content {
@@ -43,12 +47,13 @@
   background-color: transparent;
   opacity: 40%;
 }
-
-@media (max-width: 320px) {
-  .card__image {
-    max-width: 320px;
-  }
+.card__like-button:hover {
+  opacity: 1;
 }
 
-/* TODO:
-/* fix mobile view center new post button and get rid of scroll bar */
+@media screen and (max-width: 630px) {
+  .card__image {
+    max-width: 288px;
+    height: 288px;
+  }
+}
