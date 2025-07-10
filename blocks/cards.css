@@ -1,5 +1,5 @@
 .cards {
-  padding-top: 20px;
+  padding-bottom: 36px;
   border-top: rgba(33, 33, 33, 0.4) solid;
   border-bottom: rgba(33, 33, 33, 0.4) solid;
 }
@@ -21,6 +21,9 @@
     margin: 0 auto;
     padding: 0 16px;
     display: grid;
-    gap: 24px;
+    gap: 20px;
+  }
+  .cards {
+    padding-bottom: 20px;
   }
 }
