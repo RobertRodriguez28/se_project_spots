@@ -48,9 +48,11 @@
   line-height: 100%;
   letter-spacing: 0%;
 }
+
 .profile__add-btn:hover {
   opacity: 0.8;
 }
+
 .profile__avatar {
   height: 190px;
   width: 190px;

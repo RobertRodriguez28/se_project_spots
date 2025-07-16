@@ -69,7 +69,7 @@
 }
 
 .modal__input:hover {
-  border: color rgba(33, 33, 33, 1);
+  border: rgba(33, 33, 33, 1);
 }
 
 .modal__label {
@@ -88,6 +88,11 @@
   color: rgba(252, 245, 229, 1);
   background-color: rgba(33, 33, 33, 1);
 }
+
+.modal__submit-btn:hover {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 550px) {
   .modal__container {
     padding: 12px;
