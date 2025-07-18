@@ -13,13 +13,11 @@
   cursor: pointer;
   opacity: 0;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
-  pointer-events: none;
 }
 
 .modal_is-opened {
   visibility: visible;
   opacity: 1;
-  pointer-events: auto;
   transition-delay: 0s;
 }
 

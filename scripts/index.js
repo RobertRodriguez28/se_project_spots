@@ -66,6 +66,7 @@ const profileDescriptionEL = document.querySelector(".profile__description");
 editProfileBtn.addEventListener("click", function () {
   editProfileModal.classList.add("modal_is-opened");
   editProfileNameInput.value = profileNameEl.textContent;
+  editProfileDescriptionInput.value = profileDescriptionEL.textContent;
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
