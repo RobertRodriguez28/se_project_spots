@@ -33,13 +33,39 @@ const initialCards = [
 const editProfileBtn = document.querySelector(".profile__edit-btn");
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editProfileCloseBtn = editProfileModal.querySelector(".modal__close-btn");
+const editProfileFormEL = editProfileModal.querySelector(".modal__form");
+const editProfileNameInput = editProfileModal.querySelector(
+  "#profile-name-input"
+);
+const editProfileDescriptionInput = editProfileModal.querySelector(
+  "#profile-description-input"
+);
 
 const newPostBtn = document.querySelector(".profile__add-btn");
 const newPostModal = document.querySelector("#new-post-modal");
 const newPostCloseBtn = newPostModal.querySelector(".modal__close-btn");
 
+const newPostBtnFormEl = newPostModal.querySelector(".modal__form");
+const newPostNameInput = newPostModal.querySelector("#card-image-input");
+const newPostDescriptionInput = newPostModal.querySelector(
+  "#profile-caption-input"
+);
+
+function handleNewPost(evt) {
+  evt.preventDefault();
+  console.log(newPostNameInput.value);
+  console.log(newPostDescriptionInput.value);
+  newPostModal.classList.remove("modal_is-opened");
+}
+
+newPostBtnFormEl.addEventListener("submit", handleNewPost);
+
+const profileNameEl = document.querySelector(".profile__name");
+const profileDescriptionEL = document.querySelector(".profile__description");
+
 editProfileBtn.addEventListener("click", function () {
   editProfileModal.classList.add("modal_is-opened");
+  editProfileNameInput.value = profileNameEl.textContent;
 });
 
 editProfileCloseBtn.addEventListener("click", function () {
@@ -54,7 +80,18 @@ newPostCloseBtn.addEventListener("click", function () {
   newPostModal.classList.remove("modal_is-opened");
 });
 
+function handleProfileFormSubmit(evt) {
+  evt.preventDefault();
+
+  profileNameEl.textContent = editProfileNameInput.value;
+  profileDescriptionEL.textContent = editProfileDescriptionInput.value;
+  editProfileModal.classList.remove("modal_is-opened");
+}
+
+editProfileFormEL.addEventListener("submit", handleProfileFormSubmit);
 initialCards.forEach(function (card) {
   console.log(card.name);
   console.log(card.link);
 });
+
+//TODO:implemnt smooth transions in modal.css
