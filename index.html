@@ -39,7 +39,17 @@
         </section>
         <section class="cards page__section">
           <ul class="cards__lists">
-            <li class="card">
+            <template id="card-template">
+              <li class="card">
+                <img src="#" alt="" class="card__image" />
+                <div class="card__content">
+                  <h2 class="card__title"></h2>
+                  <button type="button" class="card__like-button"></button>
+                </div>
+                <button type="button" class="card__delete-button"></button>
+              </li>
+            </template>
+            <!-- <li class="card">
               <img
                 src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
                 alt="Val Thorens"
@@ -104,7 +114,7 @@
                 <h2 class="card__title">Mountain House</h2>
                 <button type="button" class="card__like-button"></button>
               </div>
-            </li>
+            </li> -->
           </ul>
         </section>
       </main>
@@ -165,6 +175,17 @@
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
+        </div>
+      </div>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container-preview">
+          <img
+            src="#"
+            alt=""
+            class="modal__image-preview"
+          />
+          <button type="button" class="modal__close-btn modal__close-btn_preview"></button>
+          <p class="modal__caption">Golden Gate Bridge </p>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 .card {
   width: 100%;
   max-width: 413px;
+  position: relative;
 }
 
 .card__image {
@@ -39,6 +40,25 @@
   justify-content: space-between;
 }
 
+.card__delete-button {
+  background-image: url(../images/trash-can.svg);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 0px;
+}
+
+.card__delete-button:hover {
+  background-color: rgba(255, 101, 101, 1);
+}
+
 .card__like-button {
   background-image: url(../images/Union.svg);
   width: 23px;
@@ -46,7 +66,18 @@
   border: none;
   background-color: transparent;
   opacity: 40%;
+  cursor: pointer;
 }
+
+.card__like-button_active {
+  background-image: url(../images/like-icon-bright-red.svg);
+  opacity: 100%;
+}
+
+.card__like-button_active:hover {
+  background-image: url(../images/State=State4.svg);
+}
+
 .card__like-button:hover {
   opacity: 1;
 }
