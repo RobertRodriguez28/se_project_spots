@@ -86,6 +86,7 @@
 .modal__close-btn_preview {
   background-image: url(../images/X-Close-Btn.svg);
   top: 0px;
+  right:unset;
   /* left:calc(100%); */
   opacity: 1;
   background-position: center;
