@@ -56,7 +56,7 @@
   padding-right: 8px;
   padding-bottom: 4px;
   padding-left: 8px;
-  margin-top: auto;
+  margin-top: 8px;
   position:absolute;
 }
 
@@ -85,6 +85,8 @@
 
 .modal__close-btn_preview {
   background-image: url(../images/X-Close-Btn.svg);
+  background-size: contain;
+
   top: 0px;
   right:unset;
   /* left:calc(100%); */

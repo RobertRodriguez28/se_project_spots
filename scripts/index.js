@@ -66,12 +66,11 @@ function handleNewPost(evt) {
   evt.preventDefault();
 
   console.log(newPostDescriptionInput.value);
-  const newCardEl = getCardElement({
+  renderCard({
     link: newPostImageInput.value,
     name: newPostDescriptionInput.value,
   });
-  cardsList.prepend(newCardEl);
-  newPostModal.classList.remove("modal_is-opened");
+  closeModal(newPostModal);
 }
 
 newPostBtnFormEl.addEventListener("submit", handleNewPost);
@@ -124,14 +123,7 @@ function getCardElement(data) {
     previewImageEl.src = data.link;
     previewCaptionEL.textContent = data.name;
     openModal(previewModal);
-    //close-btn-cliclListener
   });
-  cardDeleteBtnEl.addEventListener("click", () => {
-
-  });
-
-
-
 
   cardImageEl.src = data.link;
   cardImageEl.alt = data.name;
@@ -148,7 +140,7 @@ function getCardElement(data) {
 }
 const cardPreviewCloseBtn = previewModal.querySelector(".modal__close-btn");
 cardPreviewCloseBtn.addEventListener("click", () => {
-closeModal(previewModal);
+  closeModal(previewModal);
 });
 
 const cardTemplate = document
@@ -156,12 +148,14 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__lists");
 
+// initialCards.forEach(function (card) {
+// const cardElement = getCardElement(card);
+// cardsList.append(cardElement);
+// });
+function renderCard(data) {
+  const cardElement = getCardElement(data);
+  cardsList.prepend(cardElement);
+}
 initialCards.forEach(function (card) {
-  const cardElement = getCardElement(card);
-  cardsList.append(cardElement);
-});
-
-const cardDeleteBtnEl = getCardElement.querySelector(".card__delete-button");
-cardDeleteBtnEl.addEventListener("click", function () {
-  getCardElement.remove();
+  renderCard(card);
 });
