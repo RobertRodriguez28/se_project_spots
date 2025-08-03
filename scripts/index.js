@@ -1,37 +1,32 @@
 const initialCards = [
   {
-    name: "Golden Gate Bridge",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/7-photo-by-griffin-wooldridge-from-pexels.jpg",
+    name: "Mexico City",
+    link: "https://images.unsplash.com/photo-1610220940671-c7ec20589791?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
-    name: "Val Thorens",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "Madrid Spain",
+    link: "https://images.unsplash.com/photo-1570135460230-1407222b82a2?q=80&w=1016&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
-    name: "Restaurant terrace",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+    name: "Buenos Aries Argentina",
+    link: "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
-    name: "An outdoor cafe",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+    name: "Medellin Colombia",
+    link: "https://images.unsplash.com/photo-1690535707954-597ff9dbcdc3?q=80&w=1047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
-    name: "A very long bridge, over the forest and through the trees",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+    name: "Sao Paulo Brazil",
+    link: "https://images.unsplash.com/photo-1572894234976-d961418c709d?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 
   {
-    name: "Tunnel With Morning Light",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
-  },
-
-  {
-    name: "Mountain House",
-    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+    name: "San Jose Costa Rica",
+    link: "https://images.unsplash.com/photo-1666606654536-6d4c20948779?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -55,12 +50,10 @@ const newPostImageInput = newPostModal.querySelector("#card-image-input");
 const newPostDescriptionInput = newPostModal.querySelector(
   "#profile-caption-input"
 );
-//Adding the J.S last stage from video//
 const previewModal = document.querySelector("#preview-modal");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn");
 const previewImageEl = previewModal.querySelector(".modal__image-preview");
 const previewCaptionEL = previewModal.querySelector(".modal__caption");
-//TODO Select Caption Element
 
 function handleNewPost(evt) {
   evt.preventDefault();
@@ -70,7 +63,12 @@ function handleNewPost(evt) {
     link: newPostImageInput.value,
     name: newPostDescriptionInput.value,
   });
+  evt.target.reset();
   closeModal(newPostModal);
+  toggleButtonState(
+    [newPostImageInput, newPostDescriptionInput],
+    evt.submitter
+  );
 }
 
 newPostBtnFormEl.addEventListener("submit", handleNewPost);
@@ -80,9 +78,20 @@ const profileDescriptionEL = document.querySelector(".profile__description");
 
 function closeModal(modal) {
   modal.classList.remove("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
+const allModals = document.querySelectorAll(".modal");
+
+allModals.forEach((modal) => {
+  modal.addEventListener("click", (evt) => {
+    if (evt.target === modal) {
+      closeModal(modal);
+    }
+  });
+});
 function openModal(modal) {
   modal.classList.add("modal_is-opened");
+  document.addEventListener("keydown", handleEscapeKey);
 }
 editProfileBtn.addEventListener("click", function () {
   openModal(editProfileModal);
@@ -108,6 +117,11 @@ function handleProfileFormSubmit(evt) {
   profileDescriptionEL.textContent = editProfileDescriptionInput.value;
 
   closeModal(editProfileModal);
+  evt.target.reset();
+  toggleButtonState(
+    [editProfileNameInput, editProfileDescriptionInput],
+    evt.submitter
+  );
 }
 
 editProfileFormEL.addEventListener("submit", handleProfileFormSubmit);
@@ -118,7 +132,6 @@ function getCardElement(data) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtnEl = cardElement.querySelector(".card__like-button");
   const cardDeleteBtnEl = cardElement.querySelector(".card__delete-button");
-  //Added J.S last stage srint 6//
   cardImageEl.addEventListener("click", () => {
     previewImageEl.src = data.link;
     previewCaptionEL.textContent = data.name;
@@ -148,10 +161,6 @@ const cardTemplate = document
   .content.querySelector(".card");
 const cardsList = document.querySelector(".cards__lists");
 
-// initialCards.forEach(function (card) {
-// const cardElement = getCardElement(card);
-// cardsList.append(cardElement);
-// });
 function renderCard(data) {
   const cardElement = getCardElement(data);
   cardsList.prepend(cardElement);
@@ -159,3 +168,12 @@ function renderCard(data) {
 initialCards.forEach(function (card) {
   renderCard(card);
 });
+
+function handleEscapeKey(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal.modal_is-opened");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}

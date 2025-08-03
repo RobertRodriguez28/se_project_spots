@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Roberts Project" />
-    <meta name="Robert" content="Coffe" />
-    <meta name="keywords" content="HTML,CSS" />
+    <meta name="Robert" content="Traveling Bucket List" />
+    <meta name="keywords" content="HTML,CSS,J.S" />
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
     <title>Spots</title>
@@ -18,17 +18,16 @@
       <main class="content">
         <section class="profile page__section">
           <img
-            src="./images/avatar.jpg"
-            alt="Besie Coleman Avatar"
+            src="https://sdmntpritalynorth.oaiusercontent.com/files/00000000-ef28-6246-bfcb-8d009803ed94/raw?se=2025-08-01T15%3A53%3A29Z&sp=r&sv=2024-08-04&sr=b&scid=a6394885-f4a3-5ab9-a886-ca43408c2eab&skoid=5cab1ff4-c20d-41dc-babb-df0c2cc21dd4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-01T11%3A45%3A51Z&ske=2025-08-02T11%3A45%3A51Z&sks=b&skv=2024-08-04&sig=nyJHjyEw5bxsGq8hAbdJykmYfoRp5VORbtw/F5iwkyE%3D"
+            alt="Robert Rodriguez Profile Picture"
             class="profile__avatar"
           />
           <div class="profile__column">
-            <h1 class="profile__name">Besie Coleman</h1>
+            <h1 class="profile__name">Robert Rodriguez</h1>
             <p class="profile__description">
-              Civil Aviator She was the first African-American woman and first
-              Native American to hold a pilot licenser and is the earliest known
-              Black person to earn an international pilot's
-            </p>
+              I'm a Software Engineer with a passion for building clean,
+               functional web experiences,Always exploring new ideas, both in code and around the world.
+             </p>
             <button type="button" class="profile__edit-btn">
               <img src="./images/Edit-Icon.svg" alt="Pencil Icon" />Edit Profile
             </button>
@@ -49,72 +48,6 @@
                 <button type="button" class="card__delete-button"></button>
               </li>
             </template>
-            <!-- <li class="card">
-              <img
-                src="./images/1-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Val Thorens</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/2-photo-by-ceiline-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Restaurant Terrance</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/3-photo-by-tubanur-dogan-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">An Outdoor Cafe</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/4-photo-by-maurice-laschet-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">A Very Long Bridge Over The Forest</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/5-photo-by-van-anh-nguyen-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Tunnel With Morning Light</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/6-photo-by-moritz-feldmann-from-pexels.jpg"
-                alt="Val Thorens"
-                class="card__image"
-              />
-              <div class="card__content">
-                <h2 class="card__title">Mountain House</h2>
-                <button type="button" class="card__like-button"></button>
-              </div>
-            </li> -->
           </ul>
         </section>
       </main>
@@ -127,7 +60,7 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">Edit Profile</h2>
-          <form class="modal__form">
+          <form class="modal__form"novalidate>
             <label for="profile-name-input" class="modal__label">
               Name
               <input
@@ -135,7 +68,11 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type Your Name"
+                required
+                minlength="2"
+                maxlength="40"
               />
+              <span id="profile-name-input-error" class="modal__error"></span>
             </label>
             <label for="profile-description-input" class="modal__label">
               Description
@@ -144,9 +81,14 @@
                 type="text"
                 class="modal__input"
                 placeholder="Describe Yourself"
+                required
+                minlength="2"
+                maxlength="200"
               />
+              <span  id="profile-description-input-error" class="modal__error">
+              </span>
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button type="submit" disabled class="modal__submit-btn modal__submit-btn_disable">Save</button>
           </form>
         </div>
       </div>
@@ -154,7 +96,7 @@
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
           <h2 class="modal__title">New Posts</h2>
-          <form class="modal__form">
+          <form class="modal__form"novalidate>
             <label for="card-image-input" class="modal__label">
               Image Link
               <input
@@ -162,7 +104,9 @@
                 type="url"
                 class="modal__input"
                 placeholder="Paste A Link To The Picture"
+                required
               />
+              <span id="card-image-input-error" class="modal__error"></span>
             </label>
             <label for="profile-caption-input" class="modal__label">
               Caption
@@ -171,9 +115,13 @@
                 type="text"
                 class="modal__input"
                 placeholder="Type Your Caption"
+                required
+                minlength="2"
+                maxlength="30"
               />
+              <span id="profile-caption-input-error" class="modal__error"></span>
             </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
+            <button type="submit" disabled class="modal__submit-btn modal__submit-btn_disable">Save</button>
           </form>
         </div>
       </div>
@@ -190,5 +138,6 @@
       </div>
     </div>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validation.js" ></script>
   </body>
 </html>
