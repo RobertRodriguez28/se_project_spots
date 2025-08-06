@@ -2,7 +2,7 @@ const settings = {
   formSelector: ".modal__form",
   inputSelector: ".modal__input",
   submitButtonSelector: ".modal__submit-btn",
-  inactiveButtonClass: "modal__submit-button_disable",
+  inactiveButtonClass: "modal__submit-btn_disable",
   inputErrorClass: "modal__input_type_error",
   errorClass: "modal__error",
 };
@@ -27,7 +27,6 @@ const checkInputValidity = (formEl, inputEl, config) => {
   }
 };
 
-// ToDO - handle initial states
 const hasInvalidInput = (inputList) => {
   return inputList.some((input) => {
     return !input.validity.valid;
@@ -48,6 +47,8 @@ const resetValidation = (formEl, inputList, config) => {
   inputList.forEach((inputEl) => {
     hideInputError(formEl, inputEl, config);
   });
+  const buttonElement = formEl.querySelector(config.submitButtonSelector);
+  toggleButtonState(inputList, buttonElement, config);
 };
 
 const setEventListeners = (formEl, config) => {
@@ -70,4 +71,4 @@ const enableValidation = (config) => {
   });
 };
 
-enableValidation(settings);
+export { enableValidation, settings, resetValidation };

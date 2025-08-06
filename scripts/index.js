@@ -1,3 +1,5 @@
+import { enableValidation, settings, resetValidation } from "./validation.js";
+
 const initialCards = [
   {
     name: "Mexico City",
@@ -66,7 +68,7 @@ function handleNewPost(evt) {
   evt.target.reset();
   closeModal(newPostModal);
   toggleButtonState(
-    [newPostImageInput, newPostDescriptionInput],
+    [newPostImageInput, newPostDescriptionInput, settings],
     evt.submitter
   );
 }
@@ -101,6 +103,11 @@ editProfileBtn.addEventListener("click", function () {
 
 editProfileCloseBtn.addEventListener("click", function () {
   closeModal(editProfileModal);
+  resetValidation(
+    editProfileFormEL,
+    [editProfileNameInput, editProfileDescriptionInput],
+    settings
+  );
 });
 newPostBtn.addEventListener("click", function () {
   openModal(newPostModal);
@@ -119,7 +126,7 @@ function handleProfileFormSubmit(evt) {
   closeModal(editProfileModal);
   evt.target.reset();
   toggleButtonState(
-    [editProfileNameInput, editProfileDescriptionInput],
+    [editProfileNameInput, editProfileDescriptionInput, settings],
     evt.submitter
   );
 }
@@ -177,3 +184,5 @@ function handleEscapeKey(evt) {
     }
   }
 }
+
+enableValidation(settings);
