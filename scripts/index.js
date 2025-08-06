@@ -115,11 +115,18 @@ editProfileCloseBtn.addEventListener("click", function () {
   );
 });
 newPostBtn.addEventListener("click", function () {
+  resetValidation(
+    newPostBtnFormEl,
+    [newPostImageInput, newPostDescriptionInput],
+    settings
+  );
   openModal(newPostModal);
 });
 
 newPostCloseBtn.addEventListener("click", function () {
   closeModal(newPostModal);
+  newPostImageInput.value = "";
+  newPostDescriptionInput.value = "";
 });
 
 function handleProfileFormSubmit(evt) {
