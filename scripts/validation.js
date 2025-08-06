@@ -71,4 +71,4 @@ const enableValidation = (config) => {
   });
 };
 
-export { enableValidation, settings, resetValidation };
+export { enableValidation, settings, resetValidation, toggleButtonState };

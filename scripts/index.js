@@ -1,4 +1,9 @@
-import { enableValidation, settings, resetValidation } from "./validation.js";
+import {
+  enableValidation,
+  settings,
+  resetValidation,
+  toggleButtonState,
+} from "./validation.js";
 
 const initialCards = [
   {
@@ -67,10 +72,10 @@ function handleNewPost(evt) {
   });
   evt.target.reset();
   closeModal(newPostModal);
-  toggleButtonState(
-    [newPostImageInput, newPostDescriptionInput, settings],
-    evt.submitter
-  );
+  // toggleButtonState(
+  //   [newPostImageInput, newPostDescriptionInput, settings],
+  //   evt.submitter
+  // );
 }
 
 newPostBtnFormEl.addEventListener("submit", handleNewPost);
