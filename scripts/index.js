@@ -64,6 +64,7 @@ const previewCaptionEL = previewModal.querySelector(".modal__caption");
 
 function handleNewPost(evt) {
   evt.preventDefault();
+  //Make changes here?
 
   console.log(newPostDescriptionInput.value);
   renderCard({
@@ -72,10 +73,11 @@ function handleNewPost(evt) {
   });
   evt.target.reset();
   closeModal(newPostModal);
-  // toggleButtonState(
-  //   [newPostImageInput, newPostDescriptionInput, settings],
-  //   evt.submitter
-  // );
+  toggleButtonState(
+    [newPostImageInput, newPostDescriptionInput],
+    evt.submitter,
+    settings
+  );
 }
 
 newPostBtnFormEl.addEventListener("submit", handleNewPost);
@@ -104,22 +106,17 @@ editProfileBtn.addEventListener("click", function () {
   openModal(editProfileModal);
   editProfileNameInput.value = profileNameEl.textContent;
   editProfileDescriptionInput.value = profileDescriptionEL.textContent.trim();
-});
-
-editProfileCloseBtn.addEventListener("click", function () {
-  closeModal(editProfileModal);
   resetValidation(
     editProfileFormEL,
     [editProfileNameInput, editProfileDescriptionInput],
     settings
   );
 });
+
+editProfileCloseBtn.addEventListener("click", function () {
+  closeModal(editProfileModal);
+});
 newPostBtn.addEventListener("click", function () {
-  resetValidation(
-    newPostBtnFormEl,
-    [newPostImageInput, newPostDescriptionInput],
-    settings
-  );
   openModal(newPostModal);
 });
 
@@ -137,10 +134,6 @@ function handleProfileFormSubmit(evt) {
 
   closeModal(editProfileModal);
   evt.target.reset();
-  toggleButtonState(
-    [editProfileNameInput, editProfileDescriptionInput, settings],
-    evt.submitter
-  );
 }
 
 editProfileFormEL.addEventListener("submit", handleProfileFormSubmit);
