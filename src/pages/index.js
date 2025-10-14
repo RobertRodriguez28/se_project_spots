@@ -7,37 +7,6 @@ import {
 } from "../scripts/validation.js";
 import Api from "../utils/Api.js";
 import { setButtonText } from "../utils/helpers.js";
-// const initialCards = [
-//   {
-//     name: "Mexico City",
-//     link: "https://images.unsplash.com/photo-1610220940671-c7ec20589791?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-
-//   {
-//     name: "Madrid Spain",
-//     link: "https://images.unsplash.com/photo-1570135460230-1407222b82a2?q=80&w=1016&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-
-//   {
-//     name: "Buenos Aries Argentina",
-//     link: "https://images.unsplash.com/photo-1589909202802-8f4aadce1849?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-
-//   {
-//     name: "Medellin Colombia",
-//     link: "https://images.unsplash.com/photo-1690535707954-597ff9dbcdc3?q=80&w=1047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-
-//   {
-//     name: "Sao Paulo Brazil",
-//     link: "https://images.unsplash.com/photo-1572894234976-d961418c709d?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-
-//   {
-//     name: "San Jose Costa Rica",
-//     link: "https://images.unsplash.com/photo-1666606654536-6d4c20948779?q=80&w=1036&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   },
-// ];
 const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
