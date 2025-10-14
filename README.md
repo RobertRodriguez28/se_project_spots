@@ -1,23 +1,36 @@
-# Project 3: Spots
+Spots
 
-### Overview
+A responsive web application that allows users to share and explore photos of meaningful places around the world. Built using semantic HTML, modular CSS, and JavaScript.
 
-- Intro
-- Figma
-- Images
+🌐 Live Demo
 
-**Intro**
-
-This project is made so all the elements are displayed correctly on popular screen sizes. We recommend investing more time in completing this project, since it's more difficult than previous ones.
-
-**Figma**
-
-- [Link to the project on Figma](https://www.figma.com/file/BBNm2bC3lj8QQMHlnqRsga/Sprint-3-Project-%E2%80%94-Spots?type=design&node-id=2%3A60&mode=design&t=afgNFybdorZO6cQo-1)
-
-**Images**
-
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster.
-
-Good luck and have fun!
-This is the link for GitHub Pages for my Project
 https://robertrodriguez28.github.io/se_project_spots/
+
+🧩 Overview
+
+Spots is a front-end application that replicates the functionality of a small-scale social media feed.
+Users can:
+
+Add new photo cards with captions
+
+Edit their profile information (name, description, avatar)
+
+Like and delete posts
+
+Preview full-size images in modals
+
+Enjoy smooth validation, accessibility, and responsive layouts
+
+This project was built during my Software Engineering program at TripleTen to demonstrate proficiency in JavaScript, DOM manipulation, and modular component design.
+
+⚙️ Tech Stack
+
+HTML5 / CSS3 / BEM Methodology
+
+JavaScript (ES6)
+
+Webpack for bundling
+
+Jest for unit testing
+
+Mock API Integration for simulated data persistence
